@@ -21,7 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+        it('are defined.', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -31,7 +31,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         it('Every Object has an URL and it is not empty', function() {
+         it('Every Object has an URL and it is not empty.', function() {
            // run through each object into allfeeds with forEach function
             allFeeds.forEach(function(feed) {
               expect(feed.url).toBeDefined();
@@ -47,7 +47,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('Every Object has a NAME and it is not empty', function() {
+         it('Every Object has a NAME and it is not empty.', function() {
            // run through each object into allfeeds with forEach function
             allFeeds.forEach(function(feed) {
               expect(feed.name).toBeDefined();
@@ -67,12 +67,24 @@ $(function() {
        * the CSS to determine how we're performing the
        * hiding/showing of the menu element.
        */
+       it("Menu Element is hidden by default.", function() {
+         // menu-hidden class on body hide the menu
+         expect($("body").attr("class")).toBe("menu-hidden");
+       });
 
        /* TODO: Write a test that ensures the menu changes
         * visibility when the menu icon is clicked. This test
         * should have two expectations: does the menu display when
         * clicked and does it hide when clicked again.
         */
+        it("Menu Element change it visibility when the menu icon is clicked.", function() {
+          // triggered the click event and check if the class menu-hidden on body is not there
+          $('.menu-icon-link').trigger("click");
+          expect($("body").attr("class")).not.toBe("menu-hidden");
+          // triggered again the click event and check if the class is there again
+          $('.menu-icon-link').trigger("click");
+          expect($("body").attr("class")).toBe("menu-hidden");
+        });
 
     });
 
