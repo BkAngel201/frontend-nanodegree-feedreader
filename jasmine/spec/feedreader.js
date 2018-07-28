@@ -31,28 +31,50 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         it('Every Object has an URL and it is not empty', function() {
+           // run through each object into allfeeds with forEach function
+            allFeeds.forEach(function(feed) {
+              expect(feed.url).toBeDefined();
+              // used trim function to prevent empty spaces to be taken as actual text
+              // since the comparison is against ""
+              expect(feed.url.trim()).not.toEqual("");
+            });
+         });
+
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('Every Object has a NAME and it is not empty', function() {
+           // run through each object into allfeeds with forEach function
+            allFeeds.forEach(function(feed) {
+              expect(feed.name).toBeDefined();
+              // used trim function to prevent empty spaces to be taken as actual text
+              // since the comparison is against ""
+              expect(feed.name.trim()).not.toEqual("");
+            });
+         });
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
+    describe("The Menu", function() {
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+      /* TODO: Write a test that ensures the menu element is
+       * hidden by default. You'll have to analyze the HTML and
+       * the CSS to determine how we're performing the
+       * hiding/showing of the menu element.
+       */
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+       /* TODO: Write a test that ensures the menu changes
+        * visibility when the menu icon is clicked. This test
+        * should have two expectations: does the menu display when
+        * clicked and does it hide when clicked again.
+        */
+
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
