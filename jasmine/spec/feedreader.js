@@ -81,7 +81,7 @@ $(function() {
           // triggered the click event and check if the class menu-hidden on body is not there
           $('.menu-icon-link').trigger("click");
           expect($("body").attr("class")).not.toBe("menu-hidden");
-          // triggered again the click event and check if the class is there again
+          // triggered again the click event and check if the class menu-hidden is there again
           $('.menu-icon-link').trigger("click");
           expect($("body").attr("class")).toBe("menu-hidden");
         });
