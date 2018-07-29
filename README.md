@@ -40,21 +40,20 @@ This project is the finished test Suite of a web-based application that reads RS
 
 ## File Manifest
 
+| Location | Description |
 
-| Location 	| Description 									|
+| ------ | ------ |
 
-| ------ 	| ------ 									|
+| css | **folder** Contains all css file used on the Project |
 
-| css 		| **folder** Contains all css file used on the Project 				|
+| fonts | **folder** Contains extra fonts to use in the Project |
 
-| fonts 	| **folder** Contains extra fonts to use in the Project 			|
+| jasmine/lib | **folder** Contains all the jasmine 2.1.2 library files |
 
-| jasmine/lib 	| **folder** Contains all the jasmine 2.1.2 library files 			|
+| jasmine/spec | **folder** Contains all the spec to test our project using jasmine library |
 
-| jasmine/spec 	| **folder** Contains all the spec to test our project using jasmine library 	|
+| js | **folder** Cointains the js files used on the Project |
 
-| js 		| **folder** Cointains the js files used on the Project 			|
+| index.html | **file** open the RSS Fead and execute the test Suite |
 
-| index.html 	| **file** open the RSS Fead and execute the test Suite 			|
-
-| README.md 	| **file** who contain all the Project description 				|
+| README.md | **file** who contain all the Project description |
