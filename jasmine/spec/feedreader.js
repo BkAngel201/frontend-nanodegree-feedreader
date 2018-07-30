@@ -69,7 +69,7 @@ $(function() {
        */
        it("Menu Element is hidden by default.", function() {
          // menu-hidden class on body hide the menu
-         expect($("body").attr("class")).toBe("menu-hidden");
+         expect($("body").hasClass("menu-hidden")).toBe(true);
        });
 
        /* This test ensures the menu changes
@@ -80,10 +80,10 @@ $(function() {
         it("Menu Element change it visibility when the menu icon is clicked.", function() {
           // triggered the click event and check if the class menu-hidden on body is not there
           $('.menu-icon-link').trigger("click");
-          expect($("body").attr("class")).not.toBe("menu-hidden");
+          expect($("body").hasClass("menu-hidden")).toBe(false);
           // triggered again the click event and check if the class menu-hidden is there again
           $('.menu-icon-link').trigger("click");
-          expect($("body").attr("class")).toBe("menu-hidden");
+          expect($("body").hasClass("menu-hidden")).toBe(true);
         });
 
     });
@@ -98,9 +98,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-            loadFeed(0, function() {
-              done();
-            });
+            loadFeed(0, done);
          });
          it("Every .feed Container has at least 1 .entry to show on loadFeed() call.", function() {
            expect($(".feed .entry").length).toBeGreaterThan(0);
@@ -115,14 +113,17 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-         let feedContent = $(".feed").html();
+         let feedContentPrev = "",
+            feedContetnActual = "";
          beforeEach(function(done) {
-            loadFeed(0, function() {
-              done();
+            loadFeed(1, function() {
+              feedContent = $(".feed").html();
+              loadFeed(0,done);
             });
+            feedContetnActual = $(".feed").html();
          });
          it(".feed Container change it content on every loadFeed() call.", function() {
-           expect($(".feed").html()).not.toBe(feedContent);
+           expect(feedContetnActual).not.toBe(feedContentPrev);
          });
     });
 }());
