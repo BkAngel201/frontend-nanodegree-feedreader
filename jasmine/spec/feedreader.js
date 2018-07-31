@@ -117,7 +117,7 @@ $(function() {
             feedContetnActual = "";
          beforeEach(function(done) {
             loadFeed(1, function() {
-              feedContent = $(".feed").html();
+              feedContentPrev = $(".feed").html();
               loadFeed(0,done);
             });
             feedContetnActual = $(".feed").html();
