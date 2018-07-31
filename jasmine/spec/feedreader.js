@@ -126,7 +126,7 @@ $(function() {
 
          });
          it(".feed Container change it content on every loadFeed() call.", function() {
-           expect(feedContetnActual).not.toBe(feedContentPrev);
+           expect(feedContentActual).not.toBe(feedContentPrev);
          });
     });
 }());
