@@ -114,13 +114,16 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
          let feedContentPrev = "",
-            feedContetnActual = "";
+            feedContentActual = "";
          beforeEach(function(done) {
             loadFeed(1, function() {
               feedContentPrev = $(".feed").html();
-              loadFeed(0,done);
+              loadFeed(0,function() {
+                  feedContentActual = $(".feed").html();
+                  done();
+              });
             });
-            feedContetnActual = $(".feed").html();
+
          });
          it(".feed Container change it content on every loadFeed() call.", function() {
            expect(feedContetnActual).not.toBe(feedContentPrev);
